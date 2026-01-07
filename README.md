@@ -27,7 +27,6 @@ Built with **React**, **TypeScript**, and **Vite**, featuring advanced animation
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/dimitrisnimas/Kubik.gr.git
-    cd kubik-website
     ```
 
 2.  **Install dependencies:**

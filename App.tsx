@@ -1,13 +1,13 @@
 
 import React, { useState } from 'react';
-import { 
-  ServerIcon, 
-  MonitorIcon, 
-  ShoppingBagIcon, 
-  CodeIcon, 
+import {
+  ServerIcon,
+  MonitorIcon,
+  ShoppingBagIcon,
+  CodeIcon,
   SparklesIcon,
-  FacebookIcon, 
-  InstagramIcon, 
+  FacebookIcon,
+  InstagramIcon,
   LinkedinIcon,
   ZapIcon,
   ShieldIcon,
@@ -119,10 +119,13 @@ const Navbar: React.FC = () => (
   </nav>
 );
 
+import HeroBackground from './components/HeroBackground';
+
 const Hero: React.FC = () => (
-  <section className="pt-40 pb-20 md:pt-52 md:pb-32 px-6">
-    <div className="max-w-5xl mx-auto text-center">
-      <div className="inline-block px-4 py-1 border border-zinc-200 rounded-full text-xs font-medium mb-6 animate-pulse">
+  <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 px-6 overflow-hidden">
+    <HeroBackground />
+    <div className="relative z-10 max-w-5xl mx-auto text-center">
+      <div className="inline-block px-4 py-1 border border-zinc-200 rounded-full text-xs font-medium mb-6 animate-pulse bg-white/50 backdrop-blur-sm">
         Direct. Technical. Personal.
       </div>
       <h1 className="text-4xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] text-balance">
@@ -135,7 +138,7 @@ const Hero: React.FC = () => (
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="mailto:info@kubik.gr" className="w-full sm:w-auto px-10 py-5 bg-black text-white rounded-full font-bold hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 shadow-2xl shadow-black/10">
           Ξεκινήστε τη συνεργασία
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14m-7-7 7 7-7 7" /></svg>
         </a>
       </div>
     </div>
@@ -181,9 +184,9 @@ const WorksSection: React.FC = () => (
         {PROJECTS.map((project, idx) => (
           <div key={idx} className="bg-white rounded-[2.5rem] border border-zinc-100 hover:shadow-2xl hover:shadow-zinc-200/50 transition-all duration-700 group overflow-hidden flex flex-col">
             <div className="relative aspect-video overflow-hidden">
-              <img 
-                src={project.image} 
-                alt={project.title} 
+              <img
+                src={project.image}
+                alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               />
               <div className="absolute top-6 left-6">
@@ -194,7 +197,7 @@ const WorksSection: React.FC = () => (
               <div className="flex justify-between items-start mb-6">
                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight group-hover:text-zinc-600 transition-colors">{project.title}</h3>
                 <div className="text-zinc-300 group-hover:text-black transition-all duration-500 transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
                 </div>
               </div>
               <p className="text-zinc-500 text-sm md:text-base leading-relaxed mb-8 flex-grow">
@@ -251,15 +254,15 @@ const WhyKubik: React.FC = () => (
             </div>
           </div>
         </div>
-        
+
         <div className="relative h-[400px] md:h-[500px] flex items-center justify-center">
           <div className="absolute w-40 h-40 border border-white/10 rounded-full animate-pulse-ring"></div>
           <div className="absolute w-64 h-64 border border-white/5 rounded-full animate-pulse-ring [animation-delay:1s]"></div>
-          
+
           <div className="absolute animate-orbit">
-             <div className="w-3 h-3 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
+            <div className="w-3 h-3 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
           </div>
-          
+
           {/* 3D Cube Animation Container */}
           <div className="cube-container relative z-10">
             <div className="cube">
@@ -280,47 +283,47 @@ const WhyKubik: React.FC = () => (
 const FAQ: React.FC = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
   const faqs = [
-  { 
-    q: "Τι είναι το hosting και γιατί το χρειάζομαι;", 
-    a: "Το hosting είναι ο χώρος σε έναν server όπου φιλοξενούνται τα αρχεία του site σας. Στην KUBIK προσφέρουμε πλήρως Managed Hosting: φροντίζουμε για ταχύτητα, ασφάλεια, ενημερώσεις και backups, ώστε εσείς να ασχολείστε μόνο με την επιχείρησή σας." 
-  },
-  { 
-    q: "Τι πλεονεκτήματα έχει ένα B2B e-shop για τη χονδρική μου;", 
-    a: "Αυτοματοποιεί όλη τη διαδικασία της χονδρικής. Οι πελάτες σας βλέπουν τις δικές τους τιμές, κάνουν παραγγελίες online χωρίς τηλεφωνήματα και εσείς διαχειρίζεστε τιμοκαταλόγους, πιστωτικά όρια και ροές παραγγελιών πιο εύκολα και γρήγορα." 
-  },
-  { 
-    q: "Μπορεί το e-shop μου να συνδεθεί με το ERP ή την αποθήκη μου;", 
-    a: "Ναι, και είναι ένα από τα δυνατά μας σημεία. Δημιουργούμε αξιόπιστες συνδέσεις ώστε αποθέματα, τιμές και παραγγελίες να συγχρονίζονται αυτόματα, εξοικονομώντας χρόνο και αποφεύγοντας λάθη." 
-  },
-  { 
-    q: "Γιατί να επιλέξω την KUBIK αντί για μια μεγάλη εταιρεία;", 
-    a: "Γιατί στην KUBIK έχετε έναν προσωπικό τεχνικό συνεργάτη. Δεν υπάρχουν απρόσωπα ticket systems, καθυστερήσεις ή χαμένη πληροφορία μεταξύ τμημάτων. Η λύση που λαμβάνετε είναι προσαρμοσμένη 100% στις ανάγκες σας." 
-  },
-  { 
-    q: "Μπορείτε να αναλάβετε ένα site ή e-shop που ήδη έχω;", 
-    a: "Φυσικά. Αναλαμβάνουμε βελτιστοποίηση ταχύτητας, διόρθωση προβλημάτων, αναβάθμιση υποδομής ή μεταφορά σε πιο αξιόπιστο hosting — ακόμη κι αν το site δεν έχει κατασκευαστεί από εμάς." 
-  },
-  { 
-    q: "Αναλαμβάνετε και τη συνεχή υποστήριξη μετά την παράδοση;", 
-    a: "Ναι. Μπορούμε να συνεχίσουμε τη συνεργασία με υποστήριξη και συντήρηση, προσαρμοσμένη στις πραγματικές ανάγκες σας — από απλές ενημερώσεις μέχρι ενεργή παρακολούθηση." 
-  },
-  { 
-    q: "Μπορώ να ξεκινήσω μικρά και να μεγαλώσω αργότερα;", 
-    a: "Φυσικά. Οι λύσεις μας είναι σχεδιασμένες ώστε να κλιμακώνονται εύκολα. Ξεκινάτε με ό,τι χρειάζεστε σήμερα και επεκτείνεστε χωρίς να ξαναχτίζετε τα πάντα από την αρχή." 
-  },
-  { 
-    q: "Τι γίνεται αν κάτι σταματήσει να λειτουργεί;", 
-    a: "Σε περίπτωση προβλήματος, γνωρίζετε ακριβώς ποιος το διαχειρίζεται. Δεν μιλάτε με call centers — μιλάτε απευθείας με τον άνθρωπο που έχει αναλάβει την υποδομή σας." 
-  },
-  { 
-    q: "Απευθύνεστε και σε μη τεχνικούς πελάτες;", 
-    a: "Ναι. Εξηγούμε τα πάντα με απλό τρόπο και φροντίζουμε οι λύσεις που παραδίδουμε να είναι εύκολες στη χρήση, ακόμα κι αν δεν έχετε τεχνικό υπόβαθρο." 
-  },
-  { 
-    q: "Πόσο γρήγορα μπορεί να υλοποιηθεί ένα project;", 
-    a: "Ο χρόνος υλοποίησης εξαρτάται από τις απαιτήσεις του project. Πριν ξεκινήσουμε, ορίζουμε ξεκάθαρα το πλάνο και τα στάδια, ώστε να γνωρίζετε από την αρχή τι να περιμένετε." 
-  }
-];
+    {
+      q: "Τι είναι το hosting και γιατί το χρειάζομαι;",
+      a: "Το hosting είναι ο χώρος σε έναν server όπου φιλοξενούνται τα αρχεία του site σας. Στην KUBIK προσφέρουμε πλήρως Managed Hosting: φροντίζουμε για ταχύτητα, ασφάλεια, ενημερώσεις και backups, ώστε εσείς να ασχολείστε μόνο με την επιχείρησή σας."
+    },
+    {
+      q: "Τι πλεονεκτήματα έχει ένα B2B e-shop για τη χονδρική μου;",
+      a: "Αυτοματοποιεί όλη τη διαδικασία της χονδρικής. Οι πελάτες σας βλέπουν τις δικές τους τιμές, κάνουν παραγγελίες online χωρίς τηλεφωνήματα και εσείς διαχειρίζεστε τιμοκαταλόγους, πιστωτικά όρια και ροές παραγγελιών πιο εύκολα και γρήγορα."
+    },
+    {
+      q: "Μπορεί το e-shop μου να συνδεθεί με το ERP ή την αποθήκη μου;",
+      a: "Ναι, και είναι ένα από τα δυνατά μας σημεία. Δημιουργούμε αξιόπιστες συνδέσεις ώστε αποθέματα, τιμές και παραγγελίες να συγχρονίζονται αυτόματα, εξοικονομώντας χρόνο και αποφεύγοντας λάθη."
+    },
+    {
+      q: "Γιατί να επιλέξω την KUBIK αντί για μια μεγάλη εταιρεία;",
+      a: "Γιατί στην KUBIK έχετε έναν προσωπικό τεχνικό συνεργάτη. Δεν υπάρχουν απρόσωπα ticket systems, καθυστερήσεις ή χαμένη πληροφορία μεταξύ τμημάτων. Η λύση που λαμβάνετε είναι προσαρμοσμένη 100% στις ανάγκες σας."
+    },
+    {
+      q: "Μπορείτε να αναλάβετε ένα site ή e-shop που ήδη έχω;",
+      a: "Φυσικά. Αναλαμβάνουμε βελτιστοποίηση ταχύτητας, διόρθωση προβλημάτων, αναβάθμιση υποδομής ή μεταφορά σε πιο αξιόπιστο hosting — ακόμη κι αν το site δεν έχει κατασκευαστεί από εμάς."
+    },
+    {
+      q: "Αναλαμβάνετε και τη συνεχή υποστήριξη μετά την παράδοση;",
+      a: "Ναι. Μπορούμε να συνεχίσουμε τη συνεργασία με υποστήριξη και συντήρηση, προσαρμοσμένη στις πραγματικές ανάγκες σας — από απλές ενημερώσεις μέχρι ενεργή παρακολούθηση."
+    },
+    {
+      q: "Μπορώ να ξεκινήσω μικρά και να μεγαλώσω αργότερα;",
+      a: "Φυσικά. Οι λύσεις μας είναι σχεδιασμένες ώστε να κλιμακώνονται εύκολα. Ξεκινάτε με ό,τι χρειάζεστε σήμερα και επεκτείνεστε χωρίς να ξαναχτίζετε τα πάντα από την αρχή."
+    },
+    {
+      q: "Τι γίνεται αν κάτι σταματήσει να λειτουργεί;",
+      a: "Σε περίπτωση προβλήματος, γνωρίζετε ακριβώς ποιος το διαχειρίζεται. Δεν μιλάτε με call centers — μιλάτε απευθείας με τον άνθρωπο που έχει αναλάβει την υποδομή σας."
+    },
+    {
+      q: "Απευθύνεστε και σε μη τεχνικούς πελάτες;",
+      a: "Ναι. Εξηγούμε τα πάντα με απλό τρόπο και φροντίζουμε οι λύσεις που παραδίδουμε να είναι εύκολες στη χρήση, ακόμα κι αν δεν έχετε τεχνικό υπόβαθρο."
+    },
+    {
+      q: "Πόσο γρήγορα μπορεί να υλοποιηθεί ένα project;",
+      a: "Ο χρόνος υλοποίησης εξαρτάται από τις απαιτήσεις του project. Πριν ξεκινήσουμε, ορίζουμε ξεκάθαρα το πλάνο και τα στάδια, ώστε να γνωρίζετε από την αρχή τι να περιμένετε."
+    }
+  ];
 
   return (
     <section id="faq" className="py-24 bg-white border-t border-zinc-100">
@@ -329,13 +332,13 @@ const FAQ: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
           {faqs.map((faq, idx) => (
             <div key={idx} className="border border-zinc-100 rounded-xl overflow-hidden self-start">
-              <button 
+              <button
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
                 className={`w-full px-6 py-5 text-left flex justify-between items-center transition-colors ${openIdx === idx ? 'bg-zinc-50' : 'hover:bg-zinc-50/50'}`}
               >
                 <span className="font-semibold text-zinc-900">{faq.q}</span>
                 <span className={`transform transition-transform duration-300 ${openIdx === idx ? 'rotate-180' : ''}`}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 9 6 6 6-6"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 9 6 6 6-6" /></svg>
                 </span>
               </button>
               {openIdx === idx && (

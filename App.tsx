@@ -145,7 +145,7 @@ const Hero: React.FC = () => (
   </section>
 );
 
-import { Reveal } from './components/Reveal';
+
 
 const ServiceSection: React.FC = () => (
   <section id="services" className="relative py-24 bg-white overflow-hidden">
@@ -155,30 +155,24 @@ const ServiceSection: React.FC = () => (
 
     <div className="max-w-7xl mx-auto px-6 relative z-10">
       <div className="mb-20 text-center md:text-left">
-        <Reveal>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Εξειδικευμένες Λύσεις</h2>
-        </Reveal>
-        <Reveal delay={0.3}>
-          <p className="text-zinc-500 max-w-2xl text-lg">Καλύπτουμε όλο το φάσμα της ψηφιακής σας παρουσίας, με έμφαση στις νέες τεχνολογίες.</p>
-        </Reveal>
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Εξειδικευμένες Λύσεις</h2>
+        <p className="text-zinc-500 max-w-2xl text-lg">Καλύπτουμε όλο το φάσμα της ψηφιακής σας παρουσίας, με έμφαση στις νέες τεχνολογίες.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
         {SERVICES.map((service, idx) => (
-          <Reveal key={service.id} delay={idx * 0.1}>
-            <div className="flex flex-col gap-6 group p-6 rounded-3xl bg-white/60 backdrop-blur-sm border border-white/20 hover:bg-white/80 transition-all duration-500 hover:shadow-xl hover:shadow-zinc-200/40">
-              <div className="w-fit">
-                <div className="p-4 rounded-2xl bg-zinc-50 text-zinc-900 group-hover:bg-black group-hover:text-white transition-all duration-500 shadow-sm border border-zinc-100">
-                  {service.icon}
-                </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3 tracking-tight">{service.title}</h3>
-                <p className="text-zinc-600 leading-relaxed text-sm md:text-base">
-                  {service.description}
-                </p>
+          <div key={service.id} className="flex flex-col gap-6 group p-6 rounded-3xl bg-white/60 backdrop-blur-sm border border-white/20 hover:bg-white/80 transition-all duration-500 hover:shadow-xl hover:shadow-zinc-200/40">
+            <div className="w-fit">
+              <div className="p-4 rounded-2xl bg-zinc-50 text-zinc-900 group-hover:bg-black group-hover:text-white transition-all duration-500 shadow-sm border border-zinc-100">
+                {service.icon}
               </div>
             </div>
-          </Reveal>
+            <div>
+              <h3 className="text-2xl font-bold mb-3 tracking-tight">{service.title}</h3>
+              <p className="text-zinc-600 leading-relaxed text-sm md:text-base">
+                {service.description}
+              </p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
@@ -192,47 +186,41 @@ const WorksSection: React.FC = () => (
 
     <div className="max-w-7xl mx-auto px-6 relative z-10">
       <div className="mb-16">
-        <Reveal>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Επιλεγμένα Έργα</h2>
-        </Reveal>
-        <Reveal delay={0.2}>
-          <p className="text-zinc-500 max-w-xl">Πραγματικές λύσεις σε σύνθετα προβλήματα.</p>
-        </Reveal>
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Επιλεγμένα Έργα</h2>
+        <p className="text-zinc-500 max-w-xl">Πραγματικές λύσεις σε σύνθετα προβλήματα.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {PROJECTS.map((project, idx) => (
-          <Reveal key={idx} delay={idx * 0.2} width="100%">
-            <div className="bg-white/80 backdrop-blur-md rounded-[2.5rem] border border-white/50 shadow-xl shadow-zinc-200/60 hover:shadow-2xl hover:shadow-zinc-200/80 transition-all duration-700 group overflow-hidden flex flex-col h-full">
-              <div className="relative aspect-video overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
-                <div className="absolute top-6 left-6">
-                  <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-black bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">{project.category}</span>
-                </div>
-              </div>
-              <div className="p-8 md:p-10 flex-grow flex flex-col">
-                <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-2xl md:text-3xl font-bold tracking-tight group-hover:text-zinc-600 transition-colors">{project.title}</h3>
-                  <div className="text-zinc-300 group-hover:text-black transition-all duration-500 transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
-                  </div>
-                </div>
-                <p className="text-zinc-500 text-sm md:text-base leading-relaxed mb-8 flex-grow">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 border border-zinc-100 px-3 py-1.5 rounded-lg bg-white/50">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+          <div key={idx} className="bg-white/80 backdrop-blur-md rounded-[2.5rem] border border-white/50 shadow-xl shadow-zinc-200/60 hover:shadow-2xl hover:shadow-zinc-200/80 transition-all duration-700 group overflow-hidden flex flex-col h-full">
+            <div className="relative aspect-video overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+              />
+              <div className="absolute top-6 left-6">
+                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-black bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">{project.category}</span>
               </div>
             </div>
-          </Reveal>
+            <div className="p-8 md:p-10 flex-grow flex flex-col">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tight group-hover:text-zinc-600 transition-colors">{project.title}</h3>
+                <div className="text-zinc-300 group-hover:text-black transition-all duration-500 transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
+                </div>
+              </div>
+              <p className="text-zinc-500 text-sm md:text-base leading-relaxed mb-8 flex-grow">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map(tag => (
+                  <span key={tag} className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 border border-zinc-100 px-3 py-1.5 rounded-lg bg-white/50">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </div>
@@ -349,29 +337,25 @@ const FAQ: React.FC = () => {
   return (
     <section id="faq" className="py-24 bg-white border-t border-zinc-100">
       <div className="max-w-6xl mx-auto px-6">
-        <Reveal>
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">Συχνές Ερωτήσεις</h2>
-        </Reveal>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">Συχνές Ερωτήσεις</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
           {faqs.map((faq, idx) => (
-            <Reveal key={idx} delay={idx * 0.05} width="100%">
-              <div className="border border-zinc-100 rounded-xl overflow-hidden self-start">
-                <button
-                  onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                  className={`w-full px-6 py-5 text-left flex justify-between items-center transition-colors ${openIdx === idx ? 'bg-zinc-50' : 'hover:bg-zinc-50/50'}`}
-                >
-                  <span className="font-semibold text-zinc-900">{faq.q}</span>
-                  <span className={`transform transition-transform duration-300 ${openIdx === idx ? 'rotate-180' : ''}`}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 9 6 6 6-6" /></svg>
-                  </span>
-                </button>
-                {openIdx === idx && (
-                  <div className="px-6 py-5 bg-zinc-50/50 text-zinc-600 text-sm leading-relaxed">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            </Reveal>
+            <div key={idx} className="border border-zinc-100 rounded-xl overflow-hidden self-start">
+              <button
+                onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                className={`w-full px-6 py-5 text-left flex justify-between items-center transition-colors ${openIdx === idx ? 'bg-zinc-50' : 'hover:bg-zinc-50/50'}`}
+              >
+                <span className="font-semibold text-zinc-900">{faq.q}</span>
+                <span className={`transform transition-transform duration-300 ${openIdx === idx ? 'rotate-180' : ''}`}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 9 6 6 6-6" /></svg>
+                </span>
+              </button>
+              {openIdx === idx && (
+                <div className="px-6 py-5 bg-zinc-50/50 text-zinc-600 text-sm leading-relaxed">
+                  {faq.a}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>

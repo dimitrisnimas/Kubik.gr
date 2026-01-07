@@ -182,7 +182,7 @@ const WorksSection: React.FC = () => (
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {PROJECTS.map((project, idx) => (
-          <div key={idx} className="bg-white rounded-[2.5rem] border border-zinc-100 hover:shadow-2xl hover:shadow-zinc-200/50 transition-all duration-700 group overflow-hidden flex flex-col">
+          <div key={idx} className="bg-white rounded-[2.5rem] border border-zinc-100 shadow-xl shadow-zinc-200/60 hover:shadow-2xl hover:shadow-zinc-200/80 transition-all duration-700 group overflow-hidden flex flex-col">
             <div className="relative aspect-video overflow-hidden">
               <img
                 src={project.image}

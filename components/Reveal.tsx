@@ -8,7 +8,7 @@ interface Props {
     direction?: "up" | "down" | "left" | "right";
 }
 
-export const Reveal = ({ children, width = "fit-content", delay = 0.25, direction = "up" }: Props) => {
+export const Reveal: React.FC<Props> = ({ children, width = "fit-content", delay = 0.25, direction = "up" }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     const mainControls = useAnimation();

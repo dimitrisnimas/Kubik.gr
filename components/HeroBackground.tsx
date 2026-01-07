@@ -45,7 +45,7 @@ const HeroBackground: React.FC = () => {
             draw(ctx: CanvasRenderingContext2D) {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(200, 200, 200, 0.3)'; // Subtle gray
+                ctx.fillStyle = 'rgba(100, 100, 100, 0.4)'; // Darker gray
                 ctx.fill();
             }
         }
@@ -91,7 +91,7 @@ const HeroBackground: React.FC = () => {
 
                     if (distance < connectionDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(200, 200, 200, ${0.1 * (1 - distance / connectionDistance)})`;
+                        ctx.strokeStyle = `rgba(100, 100, 100, ${0.15 * (1 - distance / connectionDistance)})`;
                         ctx.lineWidth = 1;
                         ctx.moveTo(particle.x, particle.y);
                         ctx.lineTo(particles[j].x, particles[j].y);

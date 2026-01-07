@@ -11,7 +11,6 @@ Built with **React**, **TypeScript**, and **Vite**, featuring advanced animation
 - **Framework:** [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 - **Build Tool:** [Vite](https://vitejs.dev/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/) (via CDN)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/) + HTML5 Canvas
 - **Icons:** Lucide React (inline SVGs)
 
 ## ✨ Features

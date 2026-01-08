@@ -136,7 +136,7 @@ const Hero: React.FC = () => (
         Στην KUBIK δεν είστε άλλος ένας αριθμός σε ένα ticket system. Είμαστε ο τεχνικός σας συνεργάτης που εξασφαλίζει ότι το site, το hosting και το e-shop σας λειτουργούν αδιάλειπτα.
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="mailto:info@kubik.gr" className="w-full sm:w-auto px-10 py-5 bg-black text-white rounded-full font-bold hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 shadow-2xl shadow-black/10">
+        <a href="mailto:info@kubik.gr" target="_blank" className="w-full sm:w-auto px-10 py-5 bg-black text-white rounded-full font-bold hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 shadow-2xl shadow-black/10">
           Ξεκινήστε τη συνεργασία
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14m-7-7 7 7-7 7" /></svg>
         </a>
@@ -305,10 +305,6 @@ const FAQ: React.FC = () => {
       a: "Ναι, και είναι ένα από τα δυνατά μας σημεία. Δημιουργούμε αξιόπιστες συνδέσεις ώστε αποθέματα, τιμές και παραγγελίες να συγχρονίζονται αυτόματα, εξοικονομώντας χρόνο και αποφεύγοντας λάθη."
     },
     {
-      q: "Γιατί να επιλέξω την KUBIK αντί για μια μεγάλη εταιρεία;",
-      a: "Γιατί στην KUBIK έχετε έναν προσωπικό τεχνικό συνεργάτη. Δεν υπάρχουν απρόσωπα ticket systems, καθυστερήσεις ή χαμένη πληροφορία μεταξύ τμημάτων. Η λύση που λαμβάνετε είναι προσαρμοσμένη 100% στις ανάγκες σας."
-    },
-    {
       q: "Μπορείτε να αναλάβετε ένα site ή e-shop που ήδη έχω;",
       a: "Φυσικά. Αναλαμβάνουμε βελτιστοποίηση ταχύτητας, διόρθωση προβλημάτων, αναβάθμιση υποδομής ή μεταφορά σε πιο αξιόπιστο hosting — ακόμη κι αν το site δεν έχει κατασκευαστεί από εμάς."
     },
@@ -323,10 +319,6 @@ const FAQ: React.FC = () => {
     {
       q: "Τι γίνεται αν κάτι σταματήσει να λειτουργεί;",
       a: "Σε περίπτωση προβλήματος, γνωρίζετε ακριβώς ποιος το διαχειρίζεται. Δεν μιλάτε με call centers — μιλάτε απευθείας με τον άνθρωπο που έχει αναλάβει την υποδομή σας."
-    },
-    {
-      q: "Απευθύνεστε και σε μη τεχνικούς πελάτες;",
-      a: "Ναι. Εξηγούμε τα πάντα με απλό τρόπο και φροντίζουμε οι λύσεις που παραδίδουμε να είναι εύκολες στη χρήση, ακόμα κι αν δεν έχετε τεχνικό υπόβαθρο."
     },
     {
       q: "Πόσο γρήγορα μπορεί να υλοποιηθεί ένα project;",
@@ -368,12 +360,12 @@ const CTA: React.FC = () => (
     <div className="max-w-3xl mx-auto px-6 text-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Είμαστε έτοιμοι για το επόμενο βήμα σας</h2>
       <div className="flex flex-col items-center gap-8">
-        <a href="mailto:info@kubik.gr" className="text-2xl md:text-4xl font-bold hover:text-zinc-400 transition-colors tracking-tight underline underline-offset-8">
+        <a href="mailto:info@kubik.gr" target="_blank" className="text-2xl md:text-4xl font-bold hover:text-zinc-400 transition-colors tracking-tight underline underline-offset-8">
           info@kubik.gr
         </a>
         <div className="flex justify-center space-x-12">
           {SOCIALS.map((social) => (
-            <a key={social.name} href={social.href} className="flex flex-col items-center gap-3 group" aria-label={social.name}>
+            <a key={social.name} href={social.href} target="_blank" className="flex flex-col items-center gap-3 group" aria-label={social.name}>
               <div className="p-4 bg-white rounded-full shadow-sm text-zinc-400 group-hover:text-black transition-all duration-300">
                 {social.icon}
               </div>

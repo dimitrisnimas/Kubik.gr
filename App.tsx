@@ -74,7 +74,7 @@ const PROJECTS = [
     category: 'Website',
     image: 'https://raw.githubusercontent.com/dimitrisnimas/DimitrisNimas.gr/refs/heads/main/public/assets/images/projects/resenco.png',
     description: 'Ιστοσελίδα για παροχή συμβουλετικών υπηρεσιών στις ανανεώσιμες πηγές ενέργειας.',
-    tags: ['Hosting', 'WordPress']
+    tags: ['Hosting', 'WordPress', 'Custom CSS']
   },
   {
     title: 'KUBIK Portal',
@@ -84,8 +84,15 @@ const PROJECTS = [
     tags: ['React', 'Node.js', 'PostgreSQL']
   },
   {
+    title: 'Elateia Historic Trail',
+    category: 'Website',
+    image: 'https://raw.githubusercontent.com/dimitrisnimas/DimitrisNimas.gr/refs/heads/main/public/assets/images/projects/elateiahistorictrail.PNG',
+    description: 'Ιστοσελίδα για ορειβατικό και φυσιολατικό σύλλογο.',
+    tags: ['Hosting', 'WordPress', 'Custom CSS']
+  },
+  {
     title: 'SEPAM.gr',
-    category: 'NPO',
+    category: 'Website',
     image: 'https://raw.githubusercontent.com/dimitrisnimas/DimitrisNimas.gr/refs/heads/main/public/assets/images/projects/sepam.png',
     description: 'Ιστοσελίδα για ΜΚΟ για την προστασία του περιβάλλοντος στα Αντιχάσια.',
     tags: ['Hosting', 'WordPress']

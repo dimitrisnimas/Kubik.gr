@@ -105,7 +105,7 @@ const SOCIALS: SocialLink[] = [
   { name: 'LinkedIn', href: 'https://linkedin.com/company/kubik-digital/', icon: <LinkedinIcon /> },
 ];
 
-const LOGO_URL = 'https://kubik.gr/public-images/Kubik-Black.png';
+const LOGO_URL = 'https://cdn.kubik.gr/assets/logo/Kubik-Black.png';
 
 const Navbar: React.FC = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-zinc-100">
